@@ -1,0 +1,71 @@
+<div class="row ml-0 vh-100 vw-100 overflow-hidden">
+  <div class="col position-relative">
+
+    <!-- Logo de l'entreprise  -->
+    <div class="row mb-5 mt-5">
+      <img src="../../assets/img/logo-Asperteam-2.png">
+    </div>
+
+    <div id="formulaire">
+      <!-- En-tête du formulaire -->
+      <div class="row mb-5">
+        <div class="col">
+          <h1 class="mb-3">Asperteam Admin Login</h1>
+          <span>Le backoffice d'Asperteam permet la gestion des utilisateur du dispositif créé par Asperteam ainsi que
+            l'accès à des statistiques essentiels pour amélirorer le bien être des employés.</span>
+        </div>
+      </div>
+
+      <!-- Champs à remplir pour se connecter  -->
+      <div class="row mb-5">
+        <div class="col-sm-4 mr-5">
+          <input class="w-100" type="text" autocomplete="off" placeholder="Username" name="username" required />
+        </div>
+        <div class="col-sm-4 ml-5">
+          <input class="w-100" type="password" autocomplete="off" placeholder="Password" name="password" required />
+        </div>
+      </div>
+
+      <!-- Se souvenir de l'utilisateur et bouton connexion  -->
+      <div class="row mb-5">
+        <div class="col-sm-4 mr-auto">
+          <label class="rememberme mt-checkbox mt-checkbox-outline">
+            <input type="checkbox" name="remember" value="1" />
+            <span>Remember me</span>
+          </label>
+        </div>
+        <div class="col-sm-4">
+          <a href="#">Forgot Password ?</a>
+          <button type="button" class="btn btn-primary ml-3" routerLink="/">Sign In !</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer avec les liens vers les réseaux sociaux  -->
+    <div class="row position-absolute w-100 pb-5 pr-5" style="bottom: 0;">
+      <div class="col">
+        <span class="align-bottom">Zone d'icône</span>
+      </div>
+      <div class="col text-right mr-3">
+        <span class="align-bottom">Copyright © Keenthemes 2015</span>
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+  <!-- Partie Droite avec les images  -->
+  <div class="col position-relative">
+    <img [@activeDesactive]="images[0] ? 'active' : 'desactive'" class="vh-100 position-absolute"
+      src="../../assets/img/bg1.jpg" style="z-index: 1;">
+    <img [@activeDesactive]="images[1] ? 'active' : 'desactive'" class="vh-100 position-absolute"
+      src="../../assets/img/bg2.jpg" style="z-index: 2;">
+    <img [@activeDesactive]="images[2] ? 'active' : 'desactive'" class="vh-100 position-absolute"
+      src="../../assets/img/bg3.jpg" style="z-index: 3;">
+    <img [@activeDesactive]="images[3] ? 'active' : 'desactive'" class="vh-100 position-absolute"
+      src="../../assets/img/bg4.jpg" style="z-index: 4;">
+  </div>
+</div>

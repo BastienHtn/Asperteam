@@ -1,57 +1,49 @@
-import { Component, transition, animate, trigger, state, style } from '@angular/core';
+import { Component, trigger, state, style, transition, animate, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.scss'],
   animations: [
-    trigger('activeDesactive', [
-      state('active', style({
-        opacity: 1
+    trigger('openClose', [
+      state('open', style({
+        display: 'inline-block',
+        // margin: '0px 3rem 0px 0px'
       })),
-      state('desactive', style({
-        opacity: 0
+      state('close', style({
+        display: 'none',
+        // margin: '0px 0px 0px 0px'
       })),
-      transition('active => desactive', [
-        animate('1s')
+      transition('open => close', [
+        animate('0s')
       ]),
-      transition('desactive => active', [
-        animate('0.5s')
+      transition('close => open', [
+        animate('0s')
       ]),
     ]),
   ],
 })
-export class AppComponent {
-  images = [true, false, false, false];
-  indexImage = 0;
+export class AppComponent implements OnInit {
 
+  public open: boolean;
 
-  constructor() {
-    setInterval(() => this.changeImage(), 5000);
+  constructor(private location: Location) {
+
   }
 
-  changeImage() {
-    switch (this.indexImage) {
-      case 0:
-        this.images[this.indexImage] = false;
-        this.indexImage++;
-        this.images[this.indexImage] = true;
-        break;
-      case 1:
-        this.images[this.indexImage] = false;
-        this.indexImage++;
-        this.images[this.indexImage] = true;
-        break;
-      case 2:
-        this.images[this.indexImage] = false;
-        this.indexImage++;
-        this.images[this.indexImage] = true;
-        break;
-      case 3:
-        this.images[this.indexImage] = false;
-        this.indexImage = 0;
-        this.images[this.indexImage] = true;
-        break;
+  ngOnInit() {
+  }
+
+  isHomePage() {
+    return this.location.path() === '/home';
+  }
+
+  openClose() {
+    if (this.open) {
+      this.open = false;
+    } else {
+      this.open = true;
     }
   }
 }
