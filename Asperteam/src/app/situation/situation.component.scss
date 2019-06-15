@@ -6,11 +6,13 @@
     font-size: 16px;
     font-weight: bold;
     color: #2ab4c0;
+    padding-top: 10px;
 }
 
 .dropdown-icon {
     width: auto;
     height: auto;
+    padding-bottom: 2px;
 }
 
 .dropdown button {
@@ -25,4 +27,69 @@
 .arrow-expand {
     max-width: 15px;
     max-height: 15px;
+}
+
+.list-article {
+    padding-left: 10px;
+}
+
+.list-article-link {
+    background: #f6fbfc;
+    margin-bottom: 20px;
+}
+
+.list-article-link:hover {
+    background: #e6f4f7;
+}
+
+.list-article-title {
+    font-size: 15px;
+    color: #2b4a5c;
+    font-weight: 600;
+}
+
+.list-article-body {
+    color: #577688;
+    font-size: 13px;
+    padding-bottom: 10px;
+}
+
+.list-article-userpic {
+    border-radius: 50%;
+    border: 1px solid #cedae1;
+    width: 27px;
+    height: 27px;
+    margin-right: 10px;
+}
+
+/* Bordures */
+.list-article-primary { border-left: #007bff 2px solid; }
+.list-article-secondary { border-left: #6c757d 2px solid; }
+.list-article-info { border-left: #3faba4 2px solid; }
+.list-article-danger { border-left: #d05454 2px solid; }
+
+.article {
+
+}
+
+.article-title {
+    font-size: 15px;
+    color: #2b4a5c;
+    font-weight: 600;
+    padding-top: 3px;
+    padding-bottom: 10px;
+}
+
+.article-body {
+    color: #577688;
+    font-size: 13px;
+    padding-bottom: 10px;
+}
+
+.article-userpic {
+    border-radius: 50%;
+    border: 1px solid #cedae1;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
 }
