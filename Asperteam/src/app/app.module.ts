@@ -7,12 +7,14 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AccueilComponent } from './accueil/accueil.component';
+import { SituationComponent } from './situation/situation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AccueilComponent
+    AccueilComponent,
+    SituationComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +22,8 @@ import { AccueilComponent } from './accueil/accueil.component';
     HttpModule,
     RouterModule.forRoot([
       { path: 'home', component: HomeComponent },
-      { path: 'accueil', component: AccueilComponent }
+      { path: 'accueil', component: AccueilComponent },
+      { path: 'situation', component: SituationComponent }
     ])
   ],
   providers: [],
