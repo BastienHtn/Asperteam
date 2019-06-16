@@ -1,5 +1,5 @@
 <div class="row ml-0 vh-100 vw-100 overflow-hidden">
-  <div class="col position-relative">
+  <div class="col position-relative ml-5 mr-5">
 
     <!-- Logo de l'entreprise  -->
     <div class="row mb-5 mt-5">
@@ -9,50 +9,43 @@
     <div id="formulaire">
       <!-- En-tête du formulaire -->
       <div class="row mb-5">
-        <div class="col">
-          <h1 class="mb-3">Asperteam Admin Login</h1>
-          <span>Le backoffice d'Asperteam permet la gestion des utilisateur du dispositif créé par Asperteam ainsi que
-            l'accès à des statistiques essentiels pour amélirorer le bien être des employés.</span>
-        </div>
+          <h1>Asperteam Admin Login</h1>
+          <div class="mt-2">Le backoffice d'Asperteam permet la gestion des utilisateur du dispositif créé par Asperteam ainsi que
+            l'accès à des statistiques essentiels pour amélirorer le bien être des employés.</div>
       </div>
 
       <!-- Champs à remplir pour se connecter  -->
-      <div class="row mb-5">
-        <div class="col-sm-4 mr-5">
-          <input class="w-100" type="text" autocomplete="off" placeholder="Username" name="username" required />
-        </div>
-        <div class="col-sm-4 ml-5">
-          <input class="w-100" type="password" autocomplete="off" placeholder="Password" name="password" required />
-        </div>
+      <div class="row justify-content-center mt-3">
+        <input class="text-center col-5 mr-2" type="text" autocomplete="off" placeholder="Username" name="username" required />
+        <input class="text-center col-5 ml-2" type="password" autocomplete="off" placeholder="Password" name="password" required />
       </div>
 
       <!-- Se souvenir de l'utilisateur et bouton connexion  -->
-      <div class="row mb-5">
-        <div class="col-sm-4 mr-auto">
-          <label class="rememberme mt-checkbox mt-checkbox-outline">
+      <div class="row justify-content-center mt-4">
+        <div class="text-center col-5 mr-2">
+          <label class="rememberme">
             <input type="checkbox" name="remember" value="1" />
             <span>Remember me</span>
           </label>
         </div>
-        <div class="col-sm-4">
+        <div class="text-center col-5 ml-2">
           <a href="#">Forgot Password ?</a>
-          <button type="button" class="btn btn-primary ml-3" routerLink="/">Sign In !</button>
         </div>
       </div>
-
+      <div class="row justify-content-center mt-3">
+        <button type="button" class="btn btn-primary" routerLink="/">Sign In !</button>
+      </div>
     </div>
 
     <!-- Footer avec les liens vers les réseaux sociaux  -->
     <div class="row position-absolute w-100 pb-5 pr-5" style="bottom: 0;">
-      <div class="col">
-        <span class="align-bottom">Zone d'icône</span>
+      <div class="col text-center">
+        <span>Zone d'icône</span>
       </div>
-      <div class="col text-right mr-3">
-        <span class="align-bottom">Copyright © Keenthemes 2015</span>
+      <div class="col text-center">
+        <span>Copyright © Keenthemes 2015</span>
       </div>
     </div>
-
-
   </div>
 
 
