@@ -21,9 +21,13 @@ import { SituationComponent } from './situation/situation.component';
     FormsModule,
     HttpModule,
     RouterModule.forRoot([
-      { path: 'home', component: HomeComponent },
-      { path: 'accueil', component: AccueilComponent },
-      { path: 'situation', component: SituationComponent }
+      { path: '', component: HomeComponent },
+      {
+        path: 'accueil', component: AccueilComponent, children: [
+
+          { path: 'situation', component: SituationComponent }
+        ]
+      },
     ])
   ],
   providers: [],

@@ -1,0 +1,89 @@
+.core-block {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  display: flex;
+  background-color: rgb(238, 241, 245);
+  flex-grow: 1;
+}
+
+.page-content {
+  padding: 25px 20px 10px;
+  flex-grow: 1;
+}
+
+.listeIcone.active {
+  width: 230px;
+}
+
+.text-footer {
+  font-size: 13px;
+  font-weight: 300;
+  color: rgb(152, 166, 186);
+  font-family: "Open Sans", sans-serif;
+}
+
+#menu {
+  cursor: pointer;
+}
+
+.block-icon:hover {
+  background-color: rgba(147, 147, 147, 0.5);
+}
+
+.listeIcone {
+  padding: 0px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+.listeIcone i {
+  margin: 15px;
+  vertical-align: sub;
+  font-size: 21px;
+}
+
+.icon.desactive {
+  display: none;
+}
+
+.textMenu {
+  display: none;
+}
+
+.textMenu.up {
+  display: inline;
+}
+
+.search {
+  display: none;
+  margin: 15px;
+  border: none;
+  border-bottom: 1px solid rgb(147, 147, 147);
+  background-color: transparent;
+  outline: none;
+}
+
+.search.up {
+  display: inline;
+}
+
+h3 {
+  font-size: 14px;
+  font-weight: 300;
+  margin: 15px;
+  width: 0;
+  display: none;
+}
+
+h3.up {
+  display: inline;
+}
