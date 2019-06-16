@@ -8,13 +8,16 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { SituationComponent } from './situation/situation.component';
+import { ThemeComponent } from './theme/theme.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AccueilComponent,
-    SituationComponent
+    SituationComponent,
+    ThemeComponent
   ],
   imports: [
     BrowserModule,
@@ -25,10 +28,11 @@ import { SituationComponent } from './situation/situation.component';
       {
         path: 'accueil', component: AccueilComponent, children: [
 
-          { path: 'situation', component: SituationComponent }
+          { path: 'situation', component: SituationComponent },
+          { path: 'theme', component: ThemeComponent },
         ]
       },
-    ])
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent]
