@@ -9,8 +9,44 @@ h3 {
 .theme-header {
   padding: 30px 20px;
   width: 100%;
+}
+
+.theme-items {
+  width: 100%;
+  padding: 0px !important;
+  margin: 0px !important;
+
+  :hover {
+    background-color: #fafbfc;
+    cursor: pointer;
+  }
 
 
+  h3 {
+    font-size: 20px;
+    color: #4e5a64;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 15px;
+  }
+
+  p {
+    color: #a0a9b4;
+    margin-bottom: 15px;
+    margin-top: 0;
+  }
+
+  span {
+    margin-bottom: 15px;
+    margin-top: 0;
+    color: #d39790 !important;
+  }
+
+  li {
+    list-style-type: none;
+    padding: 30px 20px;
+    border-top: 1px solid rgba(0, 0, 0, .125);
+  }
 }
 
 .card {
@@ -52,4 +88,80 @@ span {
   text-transform: uppercase;
   outline: none;
   padding: 5px 10px;
+}
+
+.icon-add {
+  color: green;
+  cursor: pointer;
+}
+
+[type="date"] {
+  background: #fff url(https://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/calendar_2.png) 97% 50% no-repeat;
+}
+
+[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+
+[type="date"] {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + .75rem + 2px);
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+
+}
+
+
+.etape-items {
+  width: 100%;
+  padding: 0px !important;
+  margin: 0px !important;
+
+  :hover {
+    background-color: #fafbfc;
+    cursor: pointer;
+
+    h3 {
+      color: #49a7fa;
+    }
+  }
+
+
+  h3 {
+    color: #4e5a64;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.3em;
+  }
+
+  p {
+    color: #a0a9b4;
+    margin-bottom: 15px;
+    margin-top: 0;
+    float: right;
+  }
+
+  span {
+    color: #4db3a4;
+  }
+
+  li {
+    list-style-type: none;
+    padding: 30px 20px;
+    border-top: 1px solid rgba(0, 0, 0, .125);
+  }
 }
