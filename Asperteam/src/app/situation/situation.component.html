@@ -208,17 +208,21 @@
                                 <small class="text-muted">21 Sep 2014</small>
                                 <span class="badge badge-secondary article-badge">Urgent</span>
                             </div>
+                            <div class="text-right">
+                                <button class="btn btn-outline-secondary btn-sm btn-rounded">Handled</button>
+                            </div>
                             <br>
                             <ul class="nav nav-tabs">
                                 <li class="nav-item">
-                                    <a class="nav-link active" href="javascript:;">Comments</a>
+                                    <a class="nav-link active" href="javascript:show('article-comments');hide('article-history');">Comments</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="javascript:;">History</a>
+                                    <a class="nav-link" href="javascript:show('article-history');hide('article-comments');">History</a>
                                 </li>
                             </ul>
                             <br>
-                            <div class="article-comments">
+                            <!-- article-comments != article-comment -->
+                            <div id="article-comments">
                                 <div class="article-comment">
                                     <span class="mb-1 list-article-title">
                                         <a href="javascript:;">
@@ -266,12 +270,12 @@
                                             <textarea class="form-control" rows="3" placeholder="Type comment..."></textarea>
                                         </div>
                                         <div class="text-right">
-                                            <button class="btn btn-info btn-sm submit-comment" type="submit">Submit</button>
+                                            <button class="btn btn-info btn-sm btn-rounded text-white" type="submit">Submit</button>
                                         </div>
                                     </form>
                                 </div>
                             </div>
-                            <div class="article-history">
+                            <div id="article-history">
 
                             </div>
                         </div>
@@ -280,3 +284,14 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        function show(id)
+        {
+            document.getElementById(id).style.display = "block";
+        }
+
+        function hide(id)
+        {
+            document.getElementById(id).style.display = "none";
+        }
+    </script>
