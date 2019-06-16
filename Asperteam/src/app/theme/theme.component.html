@@ -5,17 +5,143 @@
       <div class="block-theme">
         <div class="theme-header">
           <h4>THEMES</h4>
-          <button class="btn-green">Add theme</button>
+          <button class="btn-green" data-toggle="modal" data-target="#modalAddTheme">Add theme</button>
         </div>
+        <ul class="theme-items" *ngFor="let theme of listeTheme; let i = index;">
+          <li (click)="selectTheme(i)">
+            <h3>{{ theme.name }}</h3>
+            <p>{{ theme.desc }}</p>
+            <div>
+              <span>{{ theme.tasks?.length || '0' }} étapes restantes</span>
+              <p style="float: right;">{{ theme.users?.length || '0' }} Membres</p>
+            </div>
+          </li>
+        </ul>
+        <ul class="theme-items">
+          <li>
+            <h3>Réseaux</h3>
+            <p>Se construire un réseau est une étape primordiale de l'intégration dans la société. Il est toujours plus
+              facile d'obtenir de l'aide d'une personne que l'on connaît bien.</p>
+            <div>
+              <span>22 étapes restantes</span>
+              <p style="float: right;">10 Membres</p>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
   <div class="col-7">
     <div class="card">
       <div class="block-etape">
-        <div class="theme-header">
-          <h4><span>ÉTAPES: </span>RELATIONS AUX AUTRES</h4>
-          <button class="btn-red">Nouvelle étape</button>
+        <div *ngIf="themeSelected">
+          <div class="theme-header">
+            <h4><span>ÉTAPES: </span>{{ themeSelected.name }} </h4>
+            <span style="margin-left: 10px;">{{ themeSelected.users?.length || '0' }}
+              Membres</span>
+            <button class="btn-red" data-toggle="modal" data-target="#modalAddEtape">Nouvelle étape</button>
+          </div>
+          <ul class="etape-items" *ngFor="let etape of themeSelected.tasks">
+            <li>
+              <h3>{{ etape.name }}</h3>
+              <p>{{ etape.user }}, <span>{{ etape.date | date: 'dd MMM' }}</span></p>
+            </li>
+          </ul>
+        </div>
+        <div class="theme-header" *ngIf="!themeSelected">
+          <h4><span>ÉTAPES: Veuillez sélectionner un thème</span></h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Add thème -->
+<div class="modal fade" id="modalAddTheme" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Ajouter un thème</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="form-group">
+          <label>Nom du thème</label>
+          <input type="text" class="form-control" name="nameTheme" id="nameTheme" (change)="changeNameTheme($event)"
+            value="{{nameNewTheme}}">
+        </div>
+
+        <div class="form-group">
+          <label>Utilisateurs</label>
+          <select class="custom-select" id="listeUser" *ngFor="let nbUser of nbUserToAdd; let j = index;"
+            style="margin-bottom: 5px;" (change)="changeUser($event, j)">
+            <option value="" disabled>Sélectionner un utilisateur</option>
+            <option *ngFor="let user of listeUserTest;">{{ user }}
+            </option>
+          </select>
+          <i class="material-icons icon-add" (click)="addUserToTheme()">
+            add
+          </i>
+        </div>
+
+
+        <div class="form-group">
+          <label>Description du thème</label>
+          <textarea class="form-control" id="descTheme" rows="3" style="resize: none;"
+            (change)="changeDescTheme($event)" value="{{descNewTheme}}"></textarea>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="cancelModal()">Annuler</button>
+          <button type="button" class="btn btn-primary" (click)="addTheme()" data-dismiss="modal">Valider</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal  Add étape to thème -->
+<div class="modal fade" id="modalAddEtape" tabindex="-2" role="dialog" aria-labelledby="modalEtape" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal">Ajouter une étape au thème {{ themeSelected?.name }}</h5>
+        <button type="button" class="close" data-dismiss="modalEtape" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="form-group">
+          <label>Nom de l'étape</label>
+          <input type="text" class="form-control" name="nameEtape" id="nameEtape" (change)="changeNameEtape($event)"
+            value="{{nameNewEtape}}">
+        </div>
+
+        <div class="form-group">
+          <label>Utilisateur</label>
+          <select class="custom-select" id="userEtape" style="margin-bottom: 5px;" *ngIf="themeSelected"
+            (change)="changeUserEtape($event)">
+            <option value="" disabled>Sélectionner un utilisateur</option>
+            <option *ngFor="let user of themeSelected.users;">{{ user }}
+            </option>
+          </select>
+        </div>
+
+
+        <div class="form-group">
+          <label>Date</label>
+          <input type="date" value="{{ dateNewEtape }}" (change)="changeDateEtape($event)">
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="cancelModal()">Annuler</button>
+          <button type="button" class="btn btn-primary" data-dismiss="modal"
+            (click)="addEtape(themeSelected)">Valider</button>
         </div>
       </div>
     </div>
