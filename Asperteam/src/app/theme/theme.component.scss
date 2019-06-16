@@ -124,6 +124,9 @@ span {
 
 }
 
+.card {
+  width: 100%;
+}
 
 .etape-items {
   width: 100%;
@@ -163,5 +166,17 @@ span {
     list-style-type: none;
     padding: 30px 20px;
     border-top: 1px solid rgba(0, 0, 0, .125);
+  }
+}
+
+@media screen and (max-width: 700px) and (min-width: 350px) {
+
+  .col-5,
+  .col-7 {
+    display: contents;
+  }
+
+  .card {
+    margin-bottom: 5px;
   }
 }
