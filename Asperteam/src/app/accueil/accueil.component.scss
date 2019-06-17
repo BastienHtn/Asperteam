@@ -87,3 +87,37 @@ h3 {
 h3.up {
   display: inline;
 }
+
+li.icon-top {
+  margin: 0;
+  padding: 0 8px;
+  display: inline-block;
+}
+
+li.icon-top a:hover {
+  text-decoration: none;
+}
+
+img.img-profil {
+  float: left;
+    margin-top: -5px;
+    margin-right: 5px;
+    height: 29px;
+    display: inline-block;
+    border-radius: 50%!important;
+}
+
+.username {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 300;
+  color: #c6cfda;
+}
+
+.dropdown-toggle {
+  color: #c6cfda;
+}
+
+.material-icons {
+  color: white;
+}
